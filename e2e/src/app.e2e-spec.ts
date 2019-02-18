@@ -12,7 +12,7 @@ describe('workspace-project App', () => {
     browser.get('http://localhost:4200');
     browser.waitForAngularEnabled(false);
 
-    expect(browser.getTitle()).toEqual('Koffie App');
+    expect(browser.getTitle()).toEqual('Ticket systeem');
   });
 
 });
