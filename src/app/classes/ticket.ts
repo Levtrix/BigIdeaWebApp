@@ -1,64 +1,37 @@
 import { Message } from './message';
 
 export class Ticket {
-  private _id: number;
-  private _title: string;
-  private _description: string;
-  private _messages: Message[] = [];
-  private _creationDate: Date;
+  private id: number;
+  private title: string;
+  private description: string;
+  private messages: Message[] = [];
+  private creationDate: Date;
 
-  static fromJSON(data: any) {
-    return Object.assign(new this, data);
-  }
-
-  // Getters and setters
-  get id(): number {
-    return this._id;
-  }
-
-  set id(value: number) {
-    this._id = value;
-  }
-
-  get title(): string {
-    return this._title;
-  }
-
-  set title(value: string) {
-    this._title = value;
-  }
-
-  get description(): string {
-    return this._description;
-  }
-
-  set description(value: string) {
-    this._description = value;
-  }
-
-  get messages(): Message[] {
-    return this._messages;
-  }
-
-  set messages(args: Message[]) {
-    this.clear();
-    this.messages = args;
-  }
-
-  get creationDate(): Date {
-    return this._creationDate;
-  }
-
-  set creationDate(value: Date) {
-    this._creationDate = value;
-  }
+ constructor(title: string, description: string, messages: Message[], creationDate: Date, id?: number) {
+  this.id = id;
+  this.title = title;
+  this.description = description;
+  this.clear();
+  this.messages = messages;
+  this.creationDate = creationDate;
+ }
 
   // Class methods
   public clear(): void {
-    this._messages = [];
+    this.messages = [];
   }
 
   public addMessage(message: Message): void {
-    this._messages.push(message);
+    this.messages.push(message);
+  }
+
+  public editMessage(_message: Message): void {
+    // tslint:disable-next-line:no-shadowed-variable
+    for (const Message of this.messages) {
+      if (Message.id === _message.id) {
+          Message.messageText = _message.messageText;
+          Message.creationDate = _message.creationDate;
+      }
+    }
   }
 }

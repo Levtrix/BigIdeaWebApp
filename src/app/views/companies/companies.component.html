@@ -1,0 +1,10 @@
+<h2>Bedrijven</h2>>
+<ul class="companies">
+  <li *ngFor="let company of companies">
+    <a routerLink="/company-detail/{{company.id}}">
+      <span class="badge">&#9679;</span>{{company.name}}
+    </a>
+    <button class="delete" title="delete company"
+      (click)="deleteCompany(company)">x</button>
+  </li>
+</ul>
