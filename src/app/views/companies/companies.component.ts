@@ -13,6 +13,7 @@ export class CompaniesComponent implements OnInit {
   constructor(private companyService: CompanyService) { }
 
   ngOnInit() {
+    this.getCompanies();
   }
 
   getCompanies(): void {
@@ -31,5 +32,10 @@ export class CompaniesComponent implements OnInit {
       .subscribe(company => {
         this.companies.push(company);
       });
+  }
+
+  deleteCompany(company: Company): void {
+    this.companies = this.companies.filter(c => c !== company);
+    this.companyService.delete(company.id, company).subscribe();
   }
 }

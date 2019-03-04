@@ -1,3 +1,4 @@
+import { Customer } from './customer';
 import { Message } from './message';
 
 export class Ticket {
@@ -6,14 +7,16 @@ export class Ticket {
   private description: string;
   private messages: Message[] = [];
   private creationDate: Date;
+  private customer: Customer;
 
- constructor(title: string, description: string, messages: Message[], creationDate: Date, id?: number) {
+ constructor(title: string, description: string, messages: Message[], creationDate: Date, customer: Customer, id?: number) {
   this.id = id;
   this.title = title;
   this.description = description;
   this.clear();
   this.messages = messages;
   this.creationDate = creationDate;
+  this.customer = customer;
  }
 
   // Class methods

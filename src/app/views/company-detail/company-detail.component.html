@@ -1,3 +1,19 @@
-<p>
-  company-detail works!
-</p>
+<div *ngIf="company">
+  <h2>{{company.name | uppercase }} Details</h2>
+  <div>
+    <label>naam:
+      <input [(ngModel)]="company.name" placeholder="naam">
+    </label>
+    <br><br>
+    <label>postcode:
+      <input [(ngModel)]="company.postalCode" placeholder="1234AB">
+    </label>
+    <br><br>
+    <label>adres:
+      <input [(ngModel)]="company.address" placeholder="straatnaam + huisnummer">
+    </label>
+  </div>
+
+  <button (click)="save()">Opslaan</button>
+  <button (click)="goBack()">Terug</button>
+</div>

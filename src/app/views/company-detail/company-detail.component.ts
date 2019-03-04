@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { CompanyService } from './../../services/company.service';
+import { Company } from './../../classes/company';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-company-detail',
@@ -6,10 +10,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company-detail.component.css']
 })
 export class CompanyDetailComponent implements OnInit {
+  @Input() company: Company;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private companyService: CompanyService,
+    private location: Location
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  getCompany(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.companyService.getById(id)
+      .subscribe(company => this.company = company);
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
+  save(): void {
+    this.companyService.save(this.company)
+      .subscribe(() => this.goBack());
+  }
 }
