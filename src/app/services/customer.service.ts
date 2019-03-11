@@ -11,6 +11,6 @@ import { Injectable } from '@angular/core';
 
 export class CustomerService extends GenericService<Customer, number> {
   constructor(http: HttpClient, messageService: MessageService) {
-    super(http, messageService);
+    super(http, messageService, 'customer/');
   }
 }

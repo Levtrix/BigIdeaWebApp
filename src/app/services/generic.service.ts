@@ -14,8 +14,8 @@ export class GenericService<T, ID> {
     })
   };
 
-  constructor(protected http: HttpClient, protected messageService: MessageService) {
-    this.url = 'http://';   // TODO: Add url
+  constructor(protected http: HttpClient, protected messageService: MessageService, serviceNameUrl: string) {
+    this.url = 'http://support.gledant.nl/support/' + serviceNameUrl;
   }
 
   protected getUrl(): string {

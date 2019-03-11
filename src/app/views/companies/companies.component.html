@@ -8,3 +8,21 @@
       (click)="deleteCompany(company)">x</button>
   </li>
 </ul>
+<br><br>
+
+<h4>Bedrijf toevoegen</h4>
+<div>
+  <label>Naam:
+    <input #companyName />
+  </label>
+  <br>
+  <label>Postcode:
+    <input #companyPostalcode />
+  </label>
+  <br>
+  <label>Adres:
+    <input #companyAddress />
+  </label>
+  <br><br>
+  <button (click)="addCompany(companyName.value, companyPostalcode.value, companyAddress.value); companyName.value=''; companyPostalcode.value=''; companyAddress.value=''">Toevoegen</button>
+</div>
