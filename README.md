@@ -1,5 +1,7 @@
 # BigIdeaWebApp
 
+Ticketsysteem web applicatie waarin het mogelijk is om tickets aan te maken en te wijzigen. Ook is het mogelijk om klanten met hun bijbehorend bedrijf aan te maken en te wijzigen.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
 ## Development server
