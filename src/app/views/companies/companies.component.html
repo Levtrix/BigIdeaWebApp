@@ -4,23 +4,23 @@
     <a routerLink="/company-detail/{{company.id}}">
       <span class="badge">&#9679;</span>{{company.name}}
     </a>
-    <button class="delete" title="delete company"
-      (click)="deleteCompany(company)">x</button>
+    <!--<button class="delete" title="delete company"
+      (click)="deleteCompany(company)">x</button>-->
   </li>
 </ul>
 <br><br>
 
 <h4>Bedrijf toevoegen</h4>
 <div>
-  <label>Naam:
+  <label>Naam bedrijf:
     <input #companyName />
   </label>
   <br>
-  <label>Postcode:
+  <label>Postcode bedrijf:
     <input #companyPostalcode />
   </label>
   <br>
-  <label>Adres:
+  <label>Adres bedrijf:
     <input #companyAddress />
   </label>
   <br><br>

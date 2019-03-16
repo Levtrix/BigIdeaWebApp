@@ -9,6 +9,8 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { CompaniesComponent } from './views/companies/companies.component';
 import { NotfoundComponent } from './views/notfound/notfound.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
+import { CustomersComponent } from './views/customers/customers.component';
+import { CustomerDetailComponent } from './views/customer-detail/customer-detail.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
     CompanyDetailComponent,
     DashboardComponent,
     CompaniesComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    CustomersComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,

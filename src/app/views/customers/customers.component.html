@@ -1,0 +1,26 @@
+<h2>Werknemers klanten</h2>
+<ul class="customers">
+  <li *ngFor="let customer of customers">
+    <a routerLink="/customer-detail/{{customer.id}}">
+      <span class="badge">&#9679;</span>{{customer.firstName}} {{customer.lastName}}
+    </a>
+    <!--<button class="delete" title="delete customer"
+      (click)="deleteCustomer(customer)">x</button>-->
+  </li>
+</ul>
+<br><br>
+
+<h4>Werknemer klant toevoegen</h4>
+<div>
+  <label>Bedrijf:</label><br>
+  <select [(ngModel)]="company" id="companylist" (change)="onCompanyChange(company)">
+    <option *ngFor="let company of companies" [ngValue]="company">{{company.name}}</option>
+  </select>
+  <label>Voornaam werknemer klant:
+    <input #customerFirstName />
+  </label><br>
+  <label>Achternaam werknemer klant:
+    <input #customerLastName />
+  </label><br>
+  <button (click)="addCustomer(customerFirstName.value, customerLastName.value); customerFirstName.value=''; customerLastName.value=''">Toevoegen</button>
+</div>

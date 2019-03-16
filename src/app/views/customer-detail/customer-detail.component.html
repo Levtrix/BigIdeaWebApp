@@ -1,0 +1,19 @@
+<div *ngIf="customer">
+  <h2>{{customer.firstName | uppercase }} {{customer.lastName | uppercase}}&#39;s gegevens</h2>
+  <div>
+    <label>Bedrijf:</label><br>
+    <select [(ngModel)]="customer.company.id">
+      <option *ngFor="let company of companies" [ngValue]="company.id">{{company.name}}</option>
+    </select>
+    <br><br>
+    <label>Voornaam:
+      <input [(ngModel)]="customer.firstName" placeholder="voornaame">
+    </label>
+    <label>Achternaam:
+      <input [(ngModel)]="customer.lastName" placeholder="achternaam">
+    </label>
+  </div>
+
+  <button (click)="save()">Opslaan</button>
+  <button (click)="goBack()">Terug</button>
+</div>

@@ -4,7 +4,7 @@ export class Company {
   postalCode: string;
   address: string;
 
-  constructor(name: string, postalCode: string, address: string, id?: number) {
+  constructor(name?: string, postalCode?: string, address?: string, id?: number) {
     this.id = id;
     this.name = name;
     this.postalCode = postalCode;
