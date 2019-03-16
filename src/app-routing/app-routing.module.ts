@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'companies', component: CompaniesComponent},
-  { path: 'company-detail:id', component: CompanyDetailComponent},
+  { path: 'company-detail/:id', component: CompanyDetailComponent},
   { path: '404', component: NotfoundComponent},
   { path: '**', component: NotfoundComponent}
 ];

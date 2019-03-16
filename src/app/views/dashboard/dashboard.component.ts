@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getTickets();
+    // this.getTickets();
   }
 
   getTickets(): void {
