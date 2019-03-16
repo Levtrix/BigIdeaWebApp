@@ -15,7 +15,7 @@
   <label>Bedrijf:</label><br>
   <select [(ngModel)]="company" id="companylist" (change)="onCompanyChange(company)">
     <option *ngFor="let company of companies" [ngValue]="company">{{company.name}}</option>
-  </select>
+  </select><br>
   <label>Voornaam werknemer klant:
     <input #customerFirstName />
   </label><br>
