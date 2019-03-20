@@ -11,6 +11,7 @@ import { NotfoundComponent } from './views/notfound/notfound.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { CustomersComponent } from './views/customers/customers.component';
 import { CustomerDetailComponent } from './views/customer-detail/customer-detail.component';
+import { TicketDetailComponent } from './views/ticket-detail/ticket-detail.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CustomerDetailComponent } from './views/customer-detail/customer-detail
     CompaniesComponent,
     NotfoundComponent,
     CustomersComponent,
-    CustomerDetailComponent
+    CustomerDetailComponent,
+    TicketDetailComponent
   ],
   imports: [
     BrowserModule,

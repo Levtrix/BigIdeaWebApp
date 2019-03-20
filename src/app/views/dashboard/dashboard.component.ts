@@ -1,6 +1,9 @@
+import { CustomerService } from './../../services/customer.service';
+import { Customer } from './../../classes/customer';
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from 'src/app/classes/ticket';
 import { TicketService } from 'src/app/services/ticket.service';
+import { Message } from 'src/app/classes/message';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,13 +12,19 @@ import { TicketService } from 'src/app/services/ticket.service';
 })
 export class DashboardComponent implements OnInit {
   tickets: Ticket[];
+  customers: Customer[];
+  messages: Message[];
+  customer: Customer = new Customer;
+  dateToday: Date = new Date();
 
   constructor(
-    private ticketService: TicketService
+    private ticketService: TicketService,
+    private customerService: CustomerService
   ) { }
 
   ngOnInit() {
-    // this.getTickets();
+    this.getTickets();
+    this.getCustomers();
   }
 
   getTickets(): void {
@@ -23,5 +32,28 @@ export class DashboardComponent implements OnInit {
       .subscribe(tickets => this.tickets = tickets);
   }
 
-  /* TODO: Decide if it's possible to add tickets from the dashboard*/
+  getCustomers(): void {
+    this.customerService.getAll()
+      .subscribe(customers => this.customers = customers);
+  }
+
+  addTicket(title: string, description: string): void {
+    title = title.trim();
+    description = description.trim();
+
+    if ((!title) || (!description) || (!this.customer)) { return; }
+
+    this.ticketService.save(this.buildNewTicketObject(title, description, this.customer))
+      .subscribe(ticket => {
+        this.tickets.push(ticket);
+      });
+  }
+
+  onCustomerChange(customer: Customer): void {
+    this.customer = customer;
+  }
+
+  private buildNewTicketObject(title: string, description: string, customer: Customer): Ticket {
+    return new Ticket(title, description, this.messages, this.dateToday, customer);
+  }
 }

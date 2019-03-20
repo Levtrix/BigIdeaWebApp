@@ -6,7 +6,7 @@ export class Customer {
   lastName: string;
   company: Company;
 
-  constructor(firstName: string, lastName: string, company: Company, id?: number) {
+  constructor(firstName?: string, lastName?: string, company?: Company, id?: number) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;

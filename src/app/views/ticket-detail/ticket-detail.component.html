@@ -1,0 +1,33 @@
+<div *ngIf="ticket">
+  <h2>{{ticket.title}} {{ticket.customer.company.name | uppercase}}</h2>
+  <div>
+    <label>Onderwerp:
+      <input [(ngModel)]="ticket.title" placeholder="onderwerp">
+    </label><br>
+    <label>Gemeld door:</label><br>
+    <select [(ngModel)]="customer" id="customerlist" (change)="onCustomerChange(customer)">
+      <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.firstName}} {{customer.lastName}}</option>
+    </select>
+    <br>
+    <label>Beschrijving:
+      <textarea [(ngModel)]="ticket.description" placeholder="Type beschrijving hier..."></textarea>
+    </label>
+  </div>
+
+  <ul class="messages">
+    <li *ngFor="let message of ticket.messages"><br>
+      {{message.messageText}}
+    </li>
+  </ul>
+  <br><br>
+</div>
+
+<h4>Bericht toevoegen:</h4>
+<div>
+  <label>Bericht:
+    <textarea #messageText></textarea>
+  </label>
+  <br><br>
+  <button (click)="addMessage(messageText.value); messageText.value='';">Bericht toevoegen</button>
+</div>
+<button (click)="goBack()">Terug</button>

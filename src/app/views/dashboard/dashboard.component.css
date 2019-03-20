@@ -76,7 +76,7 @@ button.delete {
 
 label {
   display: inline-block;
-  width: 25em;
+  width: 20em;
   margin: .5em 0;
   color: #4d2800;
   font-weight: bold;
@@ -86,4 +86,17 @@ input {
   height: 2em;
   font-size: 1em;
   padding-left: .4em;
+  width: 30em;
+}
+
+textarea {
+  width: 30.75em;
+  height: 15em;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
 }

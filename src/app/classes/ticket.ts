@@ -20,7 +20,7 @@ export class Ticket {
  }
 
   // Class methods
-  public clear(): void {
+  private clear(): void {
     this.messages = [];
   }
 

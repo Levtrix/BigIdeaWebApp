@@ -1,2 +1,26 @@
 <h1>Tickets</h1>
-<p>Lijst met alle tickets verschijnt snel!</p>
+<ul class="tickets">
+  <li *ngFor="let ticket of tickets">
+    <a routerLink="/ticket-detail/{{ticket.id}}">
+      <span class="bade">&#9679;</span>{{ticket.title}} {{ticket.customer.company.name | uppercase }}
+    </a>
+  </li>
+</ul>
+<br><br>
+
+<h4>Ticket toevoegen</h4>
+<label>Ticket toevoegen werkt nog niet!</label>
+<div>
+  <label>Gemeld door:</label><br>
+  <select [(ngModel)]="customer" id="customerlist" (change)="onCustomerChange(customer)">
+    <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.company.name}}, {{customer.firstName}} {{customer.lastName}}</option>
+  </select><br>
+  <label>Onderwerp:
+    <input #title />
+  </label><br>
+  <label>Beschrijving:
+    <textarea #description ></textarea>
+  </label>
+  <br><br>
+  <button (click)="addTicket(title.value, description.value); title.value=''; description.value='';">Toevoegen</button>
+</div>
