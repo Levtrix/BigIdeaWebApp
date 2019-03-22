@@ -2,7 +2,7 @@
 <ul class="tickets">
   <li *ngFor="let ticket of tickets">
     <a routerLink="/ticket-detail/{{ticket.id}}">
-      <span class="bade">&#9679;</span>{{ticket.title}} {{ticket.customer.company.name | uppercase }}
+      <span class="badge">&#9679;</span>{{ticket.title}}, {{ticket.customer.company.name | uppercase }}
     </a>
   </li>
 </ul>

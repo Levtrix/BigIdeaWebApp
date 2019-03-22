@@ -3,7 +3,6 @@ import { Customer } from './../../classes/customer';
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from 'src/app/classes/ticket';
 import { TicketService } from 'src/app/services/ticket.service';
-import { Message } from 'src/app/classes/message';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +12,6 @@ import { Message } from 'src/app/classes/message';
 export class DashboardComponent implements OnInit {
   tickets: Ticket[];
   customers: Customer[];
-  messages: Message[];
   customer: Customer = new Customer;
   dateToday: Date = new Date();
 
@@ -54,6 +52,6 @@ export class DashboardComponent implements OnInit {
   }
 
   private buildNewTicketObject(title: string, description: string, customer: Customer): Ticket {
-    return new Ticket(title, description, this.messages, this.dateToday, customer);
+    return new Ticket(title, description, this.dateToday, customer);
   }
 }

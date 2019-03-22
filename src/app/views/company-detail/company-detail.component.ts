@@ -33,7 +33,7 @@ export class CompanyDetailComponent implements OnInit {
   }
 
   save(): void {
-    this.companyService.save(this.company)
+    this.companyService.edit(this.company)
       .subscribe(() => this.goBack());
   }
 }

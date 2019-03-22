@@ -1,4 +1,25 @@
 /* TicketDetailComponent's private CSS styles */
+.messages {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 20em;
+}
+
+.messages li {
+  position: relative;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+}
+
+.messages a {
+  color: #000;
+  text-decoration: none;
+  position: relative;
+  width: 250px;
+}
+
 label {
   display: inline-block;
   width: 3em;
@@ -43,7 +64,7 @@ button.delete {
 
 textarea {
   width: 30.75em;
-  height: 15em;
+  height: 12em;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;

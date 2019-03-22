@@ -5,21 +5,26 @@
       <input [(ngModel)]="ticket.title" placeholder="onderwerp">
     </label><br>
     <label>Gemeld door:</label><br>
-    <select [(ngModel)]="customer" id="customerlist" (change)="onCustomerChange(customer)">
-      <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.firstName}} {{customer.lastName}}</option>
+    <select [(ngModel)]="ticket.customer" id="customerlist" (change)="onCustomerChange(customer)">
+      <option *ngFor="let customer of customers" [ngValue]="ticket.customer">{{customer.firstName}} {{customer.lastName}}</option>
     </select>
     <br>
     <label>Beschrijving:
       <textarea [(ngModel)]="ticket.description" placeholder="Type beschrijving hier..."></textarea>
     </label>
+    <br>
+    <label>Berichten:</label><br>
+    <ul class="messages">
+      <li *ngFor="let message of ticket.messages">
+        <a routerLink="">
+            {{message.messageText}}
+        </a>
+        <!--<button class="delete" title="delete ticket message"
+          (click)="deleteTicketMessage(message)">x</button>-->
+      </li>
+    </ul>
+    <br><br>
   </div>
-
-  <ul class="messages">
-    <li *ngFor="let message of ticket.messages"><br>
-      {{message.messageText}}
-    </li>
-  </ul>
-  <br><br>
 </div>
 
 <h4>Bericht toevoegen:</h4>
@@ -27,7 +32,8 @@
   <label>Bericht:
     <textarea #messageText></textarea>
   </label>
-  <br><br>
+  <br>
   <button (click)="addMessage(messageText.value); messageText.value='';">Bericht toevoegen</button>
 </div>
+<button (click)="save()">Ticket details opslaan</button>
 <button (click)="goBack()">Terug</button>

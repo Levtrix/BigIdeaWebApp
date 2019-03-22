@@ -41,7 +41,31 @@ export class TicketDetailComponent implements OnInit {
   }
 
   addMessage(messageText: string): void {
-    this.ticket.addMessage(new Message(messageText, this.dateToday));
+   this.ticket.messages.push(new Message(messageText, this.dateToday));
+
+    this.ticketService.edit(this.ticket)
+      .subscribe(ticket => this.ticket = ticket);
+  }
+
+  deleteTicketMessage(message: Message): void {
+    this.ticket.messages.filter(m => m !== message);
+    this.ticketService.edit(this.ticket).subscribe();
+  }
+
+  // Decide if editing a message should be doable in this view
+  editTicketMessage(message: Message): void {
+    this.ticket.messages.forEach(m => {
+      if (message.id === m.id) {
+        m.messageText = message.messageText;
+      }
+    });
+
+    this.ticketService.edit(this.ticket).subscribe();
+  }
+
+  save(): void {
+    this.ticketService.save(this.ticket)
+      .subscribe(ticket => this.ticket = ticket);
   }
 
   goBack(): void {
