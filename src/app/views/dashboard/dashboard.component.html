@@ -1,4 +1,6 @@
 <h1>Tickets</h1>
+<label>Pas toegevoegde tickets kunnen niet gelijk aangeklikt worden. Pas naar een aantal seconden is het in de back-end verwerkt en kunnen deze ook aangeklikt worden!</label>
+<br><br>
 <ul class="tickets">
   <li *ngFor="let ticket of tickets">
     <a routerLink="/ticket-detail/{{ticket.id}}">
@@ -9,7 +11,6 @@
 <br><br>
 
 <h4>Ticket toevoegen</h4>
-<label>Ticket toevoegen werkt nog niet!</label>
 <div>
   <label>Gemeld door:</label><br>
   <select [(ngModel)]="customer" id="customerlist" (change)="onCustomerChange(customer)">
