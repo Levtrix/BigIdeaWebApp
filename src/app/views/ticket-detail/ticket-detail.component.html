@@ -5,8 +5,8 @@
       <input [(ngModel)]="ticket.title" placeholder="onderwerp">
     </label><br>
     <label>Gemeld door:</label><br>
-    <select [(ngModel)]="ticket.customer" id="customerlist" (change)="onCustomerChange(customer)">
-      <option *ngFor="let customer of customers" [ngValue]="ticket.customer">{{customer.firstName}} {{customer.lastName}}</option>
+    <select [(ngModel)]="ticket.customer.id">
+      <option *ngFor="let customer of customers" [ngValue]="customer.id">{{customer.firstName}} {{customer.lastName}}</option>
     </select>
     <br>
     <label>Beschrijving:

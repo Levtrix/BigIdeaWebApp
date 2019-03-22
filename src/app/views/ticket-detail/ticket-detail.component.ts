@@ -65,7 +65,7 @@ export class TicketDetailComponent implements OnInit {
 
   save(): void {
     this.ticketService.save(this.ticket)
-      .subscribe(ticket => this.ticket = ticket);
+      .subscribe();
   }
 
   goBack(): void {
