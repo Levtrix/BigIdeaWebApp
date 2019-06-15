@@ -6,6 +6,9 @@
     <a routerLink="/ticket-detail/{{ticket.id}}">
       <span class="badge">&#9679;</span>{{ticket.title}}, {{ticket.customer.company.name | uppercase }}
     </a>
+    <!--
+    <button class="delete" title="delete ticket"
+      (click)="deleteTicket(ticket)">x</button>-->
   </li>
 </ul>
 <br><br>

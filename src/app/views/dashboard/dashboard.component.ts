@@ -51,6 +51,12 @@ export class DashboardComponent implements OnInit {
     this.customer = customer;
   }
 
+  /*
+  deleteTicket(ticket: Ticket): void {
+    this.tickets.filter(t => t !== ticket);
+    this.ticketService.delete(ticket.id, ticket).subscribe();
+  }*/
+
   private buildNewTicketObject(title: string, description: string, customer: Customer): Ticket {
     return new Ticket(title, description, this.dateToday, customer);
   }

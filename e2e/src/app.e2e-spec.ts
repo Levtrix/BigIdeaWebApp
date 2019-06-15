@@ -17,12 +17,14 @@ describe('workspace-project App', () => {
 
   it('should have companies', function() {
     browser.get('http://localhost:4200/companies');
+    browser.waitForAngularEnabled(true);
 
     expect(element.all(by.css('a')).getText()).toContain('●Poliform');
   });
 
   it('should have customers', function() {
     browser.get('http://localhost:4200/customers');
+    browser.waitForAngularEnabled(true);
 
     expect(element.all(by.css('a')).getText()).toContain('●Pietje Puk');
   });
