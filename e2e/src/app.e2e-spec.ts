@@ -10,23 +10,23 @@ describe('workspace-project App', () => {
 
   it('should have a title', function() {
     browser.get('http://localhost:4200');
-    browser.waitForAngularEnabled(true);
+    browser.waitForAngularEnabled(false);
 
     expect(browser.getTitle()).toEqual('Ticket systeem');
   });
 
   it('should have companies', function() {
     browser.get('http://localhost:4200/companies');
-    browser.waitForAngularEnabled(true);
+    browser.waitForAngularEnabled(false);
 
     expect(element.all(by.css('a')).getText()).toContain('●Poliform');
   });
 
   it('should have customers', function() {
     browser.get('http://localhost:4200/customers');
-    browser.waitForAngularEnabled(true);
+    browser.waitForAngularEnabled(false);
 
-    expect(element.all(by.css('a')).getText()).toContain('●Pietje Puk');
+    expect(element.all(by.css('a')).getText()).toContain('●Pieter Klaasen');
   });
 
 });
