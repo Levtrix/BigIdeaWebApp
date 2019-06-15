@@ -19,14 +19,14 @@ describe('workspace-project App', () => {
     browser.get('http://localhost:4200/companies');
     browser.waitForAngularEnabled(false);
 
-    expect(element.all(by.css('a')).getText()).toContain('●Poliform ');
+    expect(element.all(by.css('a')).getText()).toContain('●Poliform');
   });
 
   it('should have customers', function() {
     browser.get('http://localhost:4200/customers');
     browser.waitForAngularEnabled(false);
 
-    expect(element.all(by.css('a')).getText()).toContain('●Pieter Klaasen ');
+    expect(element.all(by.css('a')).getText()).toContain('●Pieter Klaasen');
   });
 
 });
